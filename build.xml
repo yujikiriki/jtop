@@ -1,0 +1,43 @@
+<project name="smartdeveloper" default="compile" basedir=".">
+
+	<!-- Output Directories -->
+	<property name="classes.dir" value="classes" />
+	<property name="config.dir" value="conf" />
+
+	<!-- Source Directories -->
+	<property name="src.dir" value="src" />
+	<property name="lib.dir" value="lib" />
+
+	<property name="jar.manifest" value="jar.manifest" />
+
+	<!-- Class Path -->
+	<path id="classpath">
+		<fileset dir="${lib.dir}" includes="**/*.jar" />
+	</path>
+
+	<!-- Targets -->
+	<target name="prepare">
+		<mkdir dir="${classes.dir}" />
+	</target>
+
+	<target name="compile" depends="prepare">
+		<unzip src="lib/commons-1.0.jar" dest="${classes.dir}"/>
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" source="1.6" target="1.6" debug="true" debuglevel="lines,vars,source">
+			<classpath>
+				<path refid="classpath" />
+			</classpath>
+		</javac>
+		<manifest file="${jar.manifest}">
+			<attribute name="Premain-Class" value="me.hatter.tools.jtop.agent.Agent" />
+			<attribute name="Agent-Class" value="me.hatter.tools.jtop.agent.Agent" />
+			<attribute name="Main-Class" value="me.hatter.tools.jtop.main.Main" />
+			<attribute name="Can-Redefine-Classes" value="true" />
+		</manifest>
+		<jar destfile="jtop.jar" manifest="${jar.manifest}">
+			<fileset dir="${classes.dir}" includes="**/*.*" />
+			<fileset dir="${config.dir}" includes="**/*.*" />
+		</jar>
+		<delete dir="${classes.dir}" />
+		<delete file="${jar.manifest}" />
+	</target>
+</project>
