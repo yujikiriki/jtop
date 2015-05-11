@@ -1,6 +1,8 @@
-# Introduce
+# Introduction
 
-This is a java version `top`.
+This is a Java edition of `top`.
+
+_Java(R) is trace of Oracle(R)_
 
 # Usage
 
