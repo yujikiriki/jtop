@@ -1,11 +1,11 @@
-# README
+# Introduce
 
 This is a java version `top`.
 
 # Usage
 
 Get jtop:
-Get `jtop` from `https://bitbucket.org/hatterjiang/jtop/src`.
+Get `jtop.jar` from [https://bitbucket.org/hatterjiang/jtop/src](https://bitbucket.org/hatterjiang/jtop/src).
 
 Usage:
 ```
