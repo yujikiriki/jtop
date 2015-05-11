@@ -23,3 +23,6 @@ java -cp jtop.jar jtop [options] <pid> [<interval> [<count>]]
     --summaryoff                  Do not display summary (default: off)
     --advanced                    Do display like 'top' (default: off)
 ```
+
+
+![jtop.png](https://bitbucket.org/repo/E9aogx/images/19642114-jtop.png)
