@@ -35,7 +35,7 @@
 		</manifest>
 		<jar destfile="jtop.jar" manifest="${jar.manifest}">
 			<fileset dir="${classes.dir}" includes="**/*.*" />
-			<fileset dir="${config.dir}" includes="**/*.*" />
+			<!--<fileset dir="${config.dir}" includes="**/*.*" />-->
 		</jar>
 		<delete dir="${classes.dir}" />
 		<delete file="${jar.manifest}" />
